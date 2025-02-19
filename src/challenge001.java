@@ -10,7 +10,7 @@ public class challenge001 {
         System.out.println("ハイスコアは" + highScore);
 
         score = 10000;
-        levelCompleted = 8;
+        levelCompleted = 9;
         bonus = 200;
         System.out.println("次のハイスコアは" +
                 calcScore(gameOver, score, levelCompleted, bonus));
