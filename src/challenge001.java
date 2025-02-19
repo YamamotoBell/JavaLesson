@@ -2,17 +2,30 @@ public class challenge001 {
 
     public static void main(String[] args) {
         boolean gameOver = true;
-        int score = 10000;
-        int levelCompleted = 8;
-        int bonus = 200;
+        int score = 2000;
+        int levelCompleted = 5;
+        int bonus = 100;
 
-        int finalScore = score;
+        int highScore = calcScore(gameOver, score, levelCompleted, bonus);
+        System.out.println("ハイスコアは" + highScore);
 
-        // ゲームオーバーの場合
-        if (gameOver) {
-            finalScore += levelCompleted * bonus;
-            System.out.println("最終スコアは" + finalScore);
-        }
+        score = 10000;
+        levelCompleted = 8;
+        bonus = 200;
+        System.out.println("次のハイスコアは" +
+                calcScore(gameOver, score, levelCompleted, bonus));
 
     }
+
+    public static int calcScore(boolean gameOver,int score, int levelCompleted, int bonus) {
+        int finalScore = score;
+
+        if (gameOver) {
+            finalScore += levelCompleted * bonus;
+            finalScore += 1000;
+        }
+
+        return finalScore;
+    }
+
 }
